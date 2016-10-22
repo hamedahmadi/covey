@@ -1,0 +1,13 @@
+*.pyc
+.project
+.pydevproject
+dist
+venv*
+*.egg
+.DS_Store
+build
+*.swp
+.cache
+.idea
+*.log
+.env

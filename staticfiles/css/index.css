@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato';
+  font-weight: 200;
+  line-height: 1.5;
+  margin: 0;
+}
+
+section {
+  align-items: stretch;
+  display: flex;
+  min-height: 120vh;
+  justify-content: center;
+  padding: 10vh 10vw;
+}
+
+.section-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 200;
+  margin: 0 0 3rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.section-copy {
+  align-items: center;
+  display: flex;
+  flex: auto;
+  margin: 0 0 3rem;
+  max-width: 60vw;
+}
+
+.splash {
+  background-image: linear-gradient(180deg, transparent, transparent 50%, rgba(0, 0, 0, 0.4)), url('caltrain.jpg');
+  background-size: cover;
+  min-height: 100vh;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.page-title {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  font-size: 10rem;
+  font-weight: 100;
+  height: 40rem;
+  justify-content: center;
+  margin: 0;
+  text-transform: uppercase;
+  width: 40rem;
+}
+
+.mission .transit {
+  align-items: center;
+  display: flex;
+  font-size: 6rem;
+  justify-content: space-around;
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.rewards {
+  background-color: #424242;
+  color: white;
+}
+
+.table {
+  list-style: none;
+  margin: 0 auto;
+  max-width: 60vw;
+  padding: 0;
+}
+
+.row {
+  border-top: 1px solid #ccc;
+  padding: 2rem;
+  text-align: center;
+}
+
+.row:nth-of-type(1) {
+  border-top-width: 0;
+}
+
+.impact {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.4), transparent 50%, transparent), url('redwoods.jpg');
+  background-size: cover;
+  color: white;
+}
+
+.impact .stats {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: black;
+  display: block;
+  margin-left: 6rem;
+  padding: 1rem;
+  text-align: center;
+  width: 12rem;
+}
+
+.card:nth-of-type(1) {
+  margin-left: 0;
+}
+
+.card-value {
+  font-size: 3rem;
+  font-style: italic;
+  padding: 1rem 0;
+}
+
+.card-unit {
+  padding: 4rem 0 1rem;
+  text-transform: uppercase;
+}

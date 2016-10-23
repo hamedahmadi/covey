@@ -39,9 +39,17 @@ messaging.requestPermission()
     console.log('Unable to get permission to notify. ', err);
   });
 
+
+      var showNotification = function(show){
+        var notification = document.getElementById('push-notification');
+notification.classList.remove('hidden');
+window.setTimeout(showNotification, 5000, false);
+      }
+
+
 messaging.onMessage(function(payload) {
   console.log("Message received. ", payload);
-  $("#push-notification").text(payload.notification.title).css('visibility', 'visible');
+showNotification(true);
 });
         </script>
     </head>

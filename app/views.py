@@ -9,8 +9,17 @@ from django.template.response import TemplateResponse
 def home(request):
     return TemplateResponse(request, 'home.html')
 
+
 def admin(request):
     return TemplateResponse(request, 'admin.html')
+
+
+def user(request):
+    _type = request.GET.get('type', None)
+    if _type == 'new':
+        return TemplateResponse(request, 'new-user.html')
+    return TemplateResponse(request, 'current-user.html')
+
 
 def send_push_notification(request):
     headers = {
@@ -29,5 +38,3 @@ def send_push_notification(request):
     print response.content
     return HttpResponse('')
 
-def user(request):
-    return TemplateResponse(request, 'cover-user.html')

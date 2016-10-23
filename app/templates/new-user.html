@@ -40,8 +40,9 @@ messaging.requestPermission()
   });
 
 
-      var showNotification = function(show){
-        var notification = document.getElementById('push-notification');
+      var showNotification = function(text){
+var notification = document.getElementById('push-notification');
+notification.textContent = text;
 notification.classList.remove('hidden');
 window.setTimeout(showNotification, 5000, false);
       }
@@ -49,7 +50,7 @@ window.setTimeout(showNotification, 5000, false);
 
 messaging.onMessage(function(payload) {
   console.log("Message received. ", payload);
-showNotification(true);
+showNotification(payload.notification.title);
 });
         </script>
     </head>

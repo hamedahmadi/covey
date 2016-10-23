@@ -87,7 +87,8 @@ h2 {
   height: 8px;
 }
 
-button {
+button,
+.action {
   align-items: center;
   background-color: #26C6DA;
   border: 0;
@@ -102,6 +103,11 @@ button {
   justify-content: center;
   text-transform: uppercase;
   -webkit-appearance: none;
+  text-decoration: none;
+}
+
+.join {
+  width: 100%;
 }
 
 .floating {
@@ -115,6 +121,8 @@ button {
 
 .map h2 {
   margin-left: 0;
+  display: inline-block;
+  margin: 0 25px 0 0;
 }
 
 .map .card-image {
@@ -129,4 +137,32 @@ button {
   width: 100%;
   min-height: 40px;
   visibility: hidden;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.earnings {
+  font-size: 30px;
+}
+
+.profile img {
+  width: 40%;
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+.profile > div {
+  flex: 1 1 50%;
+}
+
+.tiny {
+  font-size: 12px;
+}
+
+.redeem {
+  margin: 8px 0;
 }

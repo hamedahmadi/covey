@@ -6,7 +6,7 @@
       <script src="https://www.gstatic.com/firebasejs/3.5.1/firebase-app.js"></script>
       <script src="{% static 'firebase-messaging.js' %}"></script>
       <script src="{% static 'user.js' %}" type="text/javascript"></script>
-      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+      <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
       <link rel="manifest" href="{% static 'manifest.json' %}">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,33 +16,89 @@
           font-family: 'Roboto';
         }
 
+        h2 {
+          font-size: 20px;
+          margin: 28px 8px 20px;
+        }
+
         .card {
           padding: 30px 20px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
           box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px 0px;
           margin-bottom: 16px;
         }
 
-        .card-content {
-          width: 45%;
+        .card-image {
+          background-position: 50% 50%;
+          background-repeat: no-repeat;
+          background-size: cover;
+          border-radius: 2px 2px 0 0;
+          flex: 0 0 auto;
+          height: 120px;
+          margin: -30px -20px 24px;
+          width: calc(100% + 40px);
         }
 
-        .card-content div:first-child {
-          font-size: 32px;
+        .flock .card-content {
+          display: flex;
+          flex: 0 0 100%;
+          justify-content: space-between;
+        }
+
+        .cell {
+          text-align: center;
+        }
+
+        .cell .value {
+          font-size: 24px;
           padding-bottom: 8px;
         }
 
-        h2 {
-          font-size: 20px;
-          font-weight: normal;
-          line-height: 1;
-          margin: 32px 0 24px;
+        .cell .unit {
+          font-size: 16px;
         }
 
-        .actions {
-          margin-top: 32px;
+        .affirmation {
+          align-items: center;
+          display: flex;
+          justify-content: flex-start;
+          padding: 20px;
+        }
+
+        .affirmation .card-icon {
+          font-size: 36px;
+          margin-right: 24px;
+        }
+
+        .affirmation .card-content {
+          flex: auto;
+          width: auto;
+        }
+
+        .achievements {
+          flex-wrap: wrap;
+        }
+
+        .achievements .card-content {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+        }
+
+        .achievements .cell {
+          flex: 1 1 50%;
+          margin: 0;
+        }
+
+        .progressbar {
+          background-color: #f1f1f1;
+          flex: 0 0 100%;
+          margin-bottom: 16px;
+          overflow: hidden;
+        }
+
+        .progressbar-fill {
+          background-color: #26C6DA;
+          height: 8px;
         }
 
         button {
@@ -64,85 +120,98 @@
 
         .floating {
           border-radius: 50%;
+          display: none;
           position: absolute;
           right: 12px;
-          top: 58px;
+          top: 54px;
           width: 36px;
         }
 
       </style>
     </head>
     <body>
-      <h2>
-        Active Flock
-      </h2>
-
-      <div class="card">
+      <div class="card affirmation">
         <div class="card-icon">
-          <i class="fa fa-users fa-2x" aria-hidden="true"></i>
+          <div class="ion-android-checkmark-circle"></div>
         </div>
         <div class="card-content">
-          <div>
-            140
-          </div>
-          <div>
-            Participants
-          </div>
+          You've joined a flock!
         </div>
       </div>
-
-      <div class="card">
-        <div class="card-icon">
-          <i class="fa fa-users fa-2x" aria-hidden="true"></i>
+      <div class="card flock">
+        <div class="progressbar">
+          <div id="fill" class="progressbar-fill" style="transform: translate3d(-44%, 0, 0);"></div>
         </div>
         <div class="card-content">
-          <div>
-            250
+          <div class="cell">
+            <div id="progress" class="value">
+              56%
+            </div>
+            <div class="unit">
+              Progress
+            </div>
           </div>
-          <div>
-            Target
+          <div class="cell">
+            <div id="participants" class="value">
+              140
+            </div>
+            <div class="unit">
+              Participants
+            </div>
+          </div>
+          <div class="cell">
+            <div class="value">
+              250
+            </div>
+            <div class="unit">
+              Target
+            </div>
           </div>
         </div>
       </div>
 
-      <h2>
-        Your impact
-      </h2>
+{#      <div class="card">#}
+{#        <div class="card-icon">#}
+{#          <i class="fa fa-users fa-2x" aria-hidden="true"></i>#}
+{#        </div>#}
+{#        <div class="card-content">#}
+{#          <div>#}
+{#            250#}
+{#          </div>#}
+{#          <div>#}
+{#            Target#}
+{#          </div>#}
+{#        </div>#}
+{#      </div>#}
 
-      <div class="card">
-        <div class="card-icon">
-          <i class="fa fa-cloud fa-2x" aria-hidden="true"></i>
+      <h2>Achievements</h2>
+
+      <div class="card achievements">
+        <div class="card-image" style="background-image: url('/static/images/snowtrees.jpg')">
         </div>
         <div class="card-content">
-          <div>
-            10
+          <div class="cell">
+            <div class="value">
+              10
+            </div>
+            <div class="unit">
+              Tons CO2 Saved
+            </div>
           </div>
-          <div>
-            Tons of CO2 saved
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">
-          <i class="fa fa-money fa-2x" aria-hidden="true"></i>
-        </div>
-        <div class="card-content">
-          <div>
-            $10
-          </div>
-          <div>
-            Saved Cash
+          <div class="cell">
+            <div class="value">
+              $40
+            </div>
+            <div class="unit">
+              Cash Saved
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="actions">
-        <button>Donate</button>
-        <button class="floating">
-          <i class="fa fa-share-alt fa-lg" aria-hidden="true"></i>
-        </button>
-      </div>
+      <button class="floating">
+        <i class="ion-android-share"></i>
+      </button>
 
     </body>
 </html>

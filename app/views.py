@@ -27,14 +27,12 @@ def send_push_notification(request):
         'Content-Type': 'application/json',
     }
     data = {
-        "to" : "",
+        "to": "f2EuH9nOWn0:APA91bGXzlP00lEmTAvpVPno2ySFIup6usem012F0j547ZqqkXbwdrd5aQIHsKz7LHkJGTLUesKQyXXHsVc6qlC8IMRiL8eoAgbN8eR2d4uAof-NLznqCE3OSj8aneOGadoai0sbcyrq",
         "notification" : {
-            "title": "Portugal vs. Denmark",
-            "body": "5 to 1"
+            "title": "Flock to Caltrain",
+            "body": "Take the Caltrain today and receive 100 points."
         },
     }
     response = requests.post('https://fcm.googleapis.com/fcm/send',
                              headers=headers, data=json.dumps(data))
-    print response.content
     return HttpResponse('')
-

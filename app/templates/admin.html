@@ -1,33 +1,37 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="UTF-8">
-  <title>Admin Dashboard</title>
-  <!--script src="https://www.gstatic.com/firebasejs/3.5.1/firebase-app.js"></script>
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script-->
-  <script>
-    function pushNotification() {
-    window.location.href = '/send_push_notification';
-    }
-  </script>
-  <link rel="manifest" href="{% static 'manifest.json' %}">
-</head>
+  <head>
+    <script
+       src="https://code.jquery.com/jquery-3.1.1.min.js"
+       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+       crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <script>
+      function pushNotification() {
+      $.get('/send_push_notification');
+      }
+    </script>
+    <link rel="manifest" href="{% static 'manifest.json' %}">
+  </head>
 
-<body>
-  <div class="container">
-    <div class="row" style="padding: 30px;">
-      <div class="text-center" style="border: 1px solid #CCC; font-size: 30px; color: #CCC; background-color: #EEE; padding: 200px 0;">
-        CHARTS
+  <body>
+    <div class="container">
+      <div class="row" style="padding: 30px;">
+        <div class="text-center" style="border: 1px solid #CCC; font-size: 30px; color: #CCC; background-color: #EEE; padding: 200px 0;">
+          CHARTS
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <button class="btn btn-default" onClick="pushNotification();">Trigger</button>
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div>
-        <button class="btn btn-default" onClick="pushNotification();">Trigger</button>
-      </div>
-    </div>
-  </div>
-</body>
+  </body>
 
 </html>

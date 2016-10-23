@@ -19,5 +19,5 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    url(r'^', include('app.urls'))
+    url(r'^', include('app.urls')),
 ] + static('/', document_root=settings.STATIC_ROOT)

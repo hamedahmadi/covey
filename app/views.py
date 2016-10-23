@@ -8,5 +8,9 @@ def home(request):
 
 
 def user(request):
-    return TemplateResponse(request, 'user.html')
+    _type = request.GET.get('type', None)
+    if _type == 'current':
+        return TemplateResponse(request, 'current-user.html')
+    return TemplateResponse(request, 'new-user.html')
+
 

@@ -147,6 +147,7 @@ button,
 
 .earnings {
   font-size: 30px;
+  display: inline-block;
 }
 
 .profile img {
@@ -164,5 +165,22 @@ button,
 }
 
 .redeem {
-  margin: 8px 0 35px;
+  margin: 8px 0;
+}
+
+.visa {
+  display: inline-block;
+  width: 20px;
+  height: 13px;
+  background-image: url('/static/images/visa.jpg');
+  background-size: cover;
+}
+
+.visa-container {
+  padding-bottom: 30px;
+  color: #AAA;
+}
+
+.visa-text {
+  display: inline-block;
 }

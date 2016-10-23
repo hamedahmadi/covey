@@ -33,6 +33,13 @@ def send_push_notification(request):
             "body": "Take the Caltrain today and receive 100 points."
         },
     }
+    data = {
+        "to": "fz1THLwTEi0:APA91bGXWNhIplwYPhQf1ImrmUwNZfRI7cyuNN--OZQpMNe41StRqxWJxpxmu9SFGWbDvtPVPsDNSNkm4n5pstQWEz76GQ2gs7vjJCtY-X7Ra_X-5cNPEZRZ4azjfnD0AzK2XZb3Ud72",
+        "notification" : {
+            "title": "Flock to Caltrain",
+            "body": "Take the Caltrain today and receive 100 points."
+        },
+    }
     response = requests.post('https://fcm.googleapis.com/fcm/send',
                              headers=headers, data=json.dumps(data))
     return HttpResponse('')

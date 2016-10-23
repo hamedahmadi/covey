@@ -22,7 +22,7 @@ def flock(request):
 
 
 def send_push_notification(request):
-    title = "Take the Caltrain today and receive 100 points!"
+    title = "Take the Caltrain today and ride for free!"
     body = ""
     headers = {
         'Authorization': 'key=AIzaSyAxJyzPAclQsMyoNos6DJT4Zh-gLEty_Go',

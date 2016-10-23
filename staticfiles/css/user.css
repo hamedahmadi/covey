@@ -129,14 +129,26 @@ button,
   height: 240px;
 }
 
-#push-notification {
+.push-notification {
   position: absolute;
   padding: 10px;
   background-color: #333;
   color: #FFF;
+  padding: 20px 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px 0px;
+  margin: -8px -8px 16px -8px;
+  display: flex;
+  align-items: center;
+  position: absolute;
   width: 100%;
   min-height: 40px;
-  visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  transition: transform 250ms ease;
+}
+
+.hidden {
+  transform: translate3d(0, -100%, 0);
+  /*visibility: hidden;*/
 }
 
 .profile {

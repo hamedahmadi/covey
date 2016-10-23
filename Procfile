@@ -1,1 +1,1 @@
-web: newrelic-admin run-program gunicorn covey.wsgi --log-file -
+web: gunicorn covey.wsgi --log-file -

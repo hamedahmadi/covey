@@ -150,9 +150,9 @@ button,
 }
 
 .profile img {
-  width: 40%;
+  width: 70%;
   border-radius: 50%;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .profile > div {
@@ -164,5 +164,5 @@ button,
 }
 
 .redeem {
-  margin: 8px 0;
+  margin: 8px 0 35px;
 }

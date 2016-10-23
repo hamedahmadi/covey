@@ -113,6 +113,14 @@ button {
   width: 36px;
 }
 
+.map h2 {
+  margin-left: 0;
+}
+
+.map .card-image {
+  height: 240px;
+}
+
 #push-notification {
   position: absolute;
   padding: 10px;

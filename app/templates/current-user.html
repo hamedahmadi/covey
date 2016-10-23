@@ -14,7 +14,7 @@
     </head>
     <body>
       <div id="push-notification" class="push-notification hidden">
-        The flock is complete. Check your rewards!
+        The flock is complete. Thanks for joining!
       </div>
       <div class="card affirmation">
         <div class="card-icon">
@@ -64,15 +64,15 @@
         <div class="card-content">
           <div class="cell">
             <div class="value">
-              10
+              17
             </div>
             <div class="unit">
-              Tons of CO2 Saved
+              Lbs of CO2 Saved
             </div>
           </div>
           <div class="cell">
             <div class="value">
-              $40
+              $7
             </div>
             <div class="unit">
               Cash Saved
@@ -96,7 +96,7 @@
           window.setTimeout(showNotification, 5000, false);
         }
         else{
-          document.getElementById('affirmation-text').innerText = 'You earned a free BART ride!';
+          document.getElementById('affirmation-text').innerText = 'You earned a free Caltrain ride!';
           notification.classList.add('hidden');
         }
       }
@@ -110,7 +110,7 @@
           return;
         }
 
-        var nextParticipants = ~~(participants.innerText) + 25;
+        var nextParticipants = ~~(participants.innerText) + 50;
         var nextProgress =~~((nextParticipants/250)*100);
 
         participants.innerText = nextParticipants;

@@ -1,5 +1,5 @@
 """
-WSGI config for covey project.
+WSGI config for slots_and_orders project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

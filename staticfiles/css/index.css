@@ -40,7 +40,7 @@ section {
 }
 
 .splash {
-  background-image: linear-gradient(180deg, transparent, transparent 50%, rgba(0, 0, 0, 0.4)), url('caltrain.jpg');
+  background-image: linear-gradient(180deg, transparent, transparent 50%, rgba(0, 0, 0, 0.4)), url('images/caltrain.jpg');
   background-size: cover;
   min-height: 100vh;
   padding-bottom: 0;
@@ -95,7 +95,7 @@ section {
 }
 
 .impact {
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.4), transparent 50%, transparent), url('redwoods.jpg');
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.4), transparent 50%, transparent), url('images/redwoods.jpg');
   background-size: cover;
   color: white;
 }

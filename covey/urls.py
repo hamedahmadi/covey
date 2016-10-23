@@ -20,10 +20,4 @@ from django.conf import settings
 
 urlpatterns = [
     url(r'^', include('app.urls')),
-    url(r'^firebase-messaging-sw.js', 'django.contrib.staticfiles.views.serve',
-        kwargs={
-            'path': 'firebase-messaging-sw.js',
-            'document_root': '/static/firebase-messaging-sw.js'
-        }
-    ),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static('/', document_root=settings.STATIC_ROOT)

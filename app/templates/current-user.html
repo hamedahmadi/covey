@@ -99,6 +99,7 @@
         .progressbar-fill {
           background-color: #26C6DA;
           height: 8px;
+          transition: transform 256ms linear;
         }
 
         button {
@@ -170,20 +171,6 @@
         </div>
       </div>
 
-{#      <div class="card">#}
-{#        <div class="card-icon">#}
-{#          <i class="fa fa-users fa-2x" aria-hidden="true"></i>#}
-{#        </div>#}
-{#        <div class="card-content">#}
-{#          <div>#}
-{#            250#}
-{#          </div>#}
-{#          <div>#}
-{#            Target#}
-{#          </div>#}
-{#        </div>#}
-{#      </div>#}
-
       <h2>Achievements</h2>
 
       <div class="card achievements">
@@ -214,4 +201,24 @@
       </button>
 
     </body>
+    <script type="application/javascript">
+      var updateProgress = function(){
+        var participants = document.getElementById('participants');
+        var progress = document.getElementById('progress');
+        var fill = document.getElementById('fill');
+
+        if((~~participants.innerText) === 250){
+          return;
+        }
+
+        var nextParticipants = ~~(participants.innerText) + 10;
+        var nextProgress =~~((nextParticipants/250)*100);
+
+        participants.innerText = nextParticipants;
+        progress.innerText = `${nextProgress}%`;
+        fill.style.transform = `translate3d(-${100-nextProgress}%, 0, 0)`;
+      }
+
+      window.setInterval(updateProgress, 2000);
+    </script>
 </html>

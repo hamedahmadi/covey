@@ -14,7 +14,7 @@ messaging.requestPermission()
     messaging.getToken()
       .then(function(currentToken) {
         console.log(currentToken);
-        document.getElementById('push-notification').textContent = currentToken;
+        //document.getElementById('push-notification').textContent = currentToken;
       })
       .catch(function(err) {
         console.log('An error occurred while retrieving token. ', err);

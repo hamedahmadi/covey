@@ -6,8 +6,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.css' rel='stylesheet' />
 
-    <title>Gentellela Alela! | </title>
+    <title>Flock Dashboard </title>
 
     <!-- Bootstrap -->
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
@@ -151,42 +154,152 @@
 
           <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="x_panel" style="height: 370px;">
-                <div class="x_title">
-                  <h2>Flock Impact on Traffic</small></h2>
-                  <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Settings 1</a>
-                        </li>
-                        <li><a href="#">Settings 2</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                  </ul>
-                  <div class="clearfix"></div>
+              <div class='row'>
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="x_panel tile">
+                    <div class="x_content">
+                      <div class="dashboard-widget-content">
+                        <div >
+                          <h4>Amtrack</h4>
+                          <canvas width="150" height="80" id="foo" class="" style="width: 160px; height: 100px;"></canvas>
+                          <div class="goal-wrapper">
+                            <span id="gauge-text" class="gauge-value pull-left">0</span>
+                            <span id="goal-text" class="goal-value pull-right">1,200</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="x_content2">
-                  <div class="col-md-12 col-sm-9 col-xs-12">
-                    <div id="placeholder33" style="height: 260px; display: none" class="demo-placeholder"></div>
-                    <div style="width: 100%;">
-                      <div id="canvas_dahs" class="demo-placeholder" style="width: 100%; height:270px;"></div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="x_panel tile">
+                    <div class="x_content">
+                      <div class="dashboard-widget-content">
+                        <div >
+                          <h4>Richmond Bart</h4>
+                          <canvas width="150" height="80" id="foo2" class="" style="width: 160px; height: 100px;"></canvas>
+                          <div class="goal-wrapper">
+                            <span id="gauge-text2" class="gauge-value pull-left">0</span>
+                            <span id="goal-text2" class="goal-value pull-right">5,000</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="x_panel tile">
+                    <div class="x_content">
+                      <div class="dashboard-widget-content">
+                        <div >
+                          <h4>Pittsburg Bart</h4>
+                          <canvas width="150" height="80" id="foo3" class="" style="width: 160px; height: 100px;"></canvas>
+                          <div class="goal-wrapper">
+                            <span id="gauge-text3" class="gauge-value pull-left">0</span>
+                            <span id="goal-text3" class="goal-value pull-right">2000</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+
+              <div class='row'>
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="x_panel tile">
+                    <div class="x_content">
+                      <div class="dashboard-widget-content">
+                        <div >
+                          <h4>Pleasanton Bart</h4>
+                          <canvas width="150" height="80" id="foo4" class="" style="width: 160px; height: 100px;"></canvas>
+                          <div class="goal-wrapper">
+                            <span id="gauge-text4" class="gauge-value pull-left">0</span>
+                            <span id="goal-text4" class="goal-value pull-right">4,000</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="x_panel tile">
+                    <div class="x_content">
+                      <div class="dashboard-widget-content">
+                        <div >
+                          <h4>N Judah MUNI</h4>
+                          <canvas width="150" height="80" id="foo5" class="" style="width: 160px; height: 100px;"></canvas>
+                          <div class="goal-wrapper">
+                            <span id="gauge-text5" class="gauge-value pull-left">0</span>
+                            <span id="goal-text5" class="goal-value pull-right">1100</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="x_panel tile">
+                    <div class="x_content">
+                      <div class="dashboard-widget-content">
+                        <div >
+                          <h4>J Church MUNI</h4>
+                          <canvas width="150" height="80" id="foo6" class="" style="width: 160px; height: 100px;"></canvas>
+                          <div class="goal-wrapper">
+                            <span id="gauge-text6" class="gauge-value pull-left">0</span>
+                            <span id="goal-text6" class="goal-value pull-right">900</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-sm-6 col-xs-12">
+                <div class="x_panel" style="height: 370px;">
+                  <div class="x_title">
+                    <h2>Cars on the Road</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content2">
+                    <div class="col-md-12 col-sm-9 col-xs-12">
+                      <div id="placeholder33" style="height: 260px; display: none" class="demo-placeholder"></div>
+                      <div style="width: 100%;">
+                        <div id="canvas_dahs" class="demo-placeholder" style="width: 100%; height:270px;"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
-            <!-- graph area -->
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="x_panel">
+              <div class="x_panel tile">
                 <div class="x_title">
-                  <h2>User Engagement</small></h2>
+                  <h2>Curernt Traffic</small></h2>
                   <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -204,119 +317,18 @@
                   </ul>
                   <div class="clearfix"></div>
                 </div>
-                <div class="x_content2">
-                  <div id="graph_area" style="width:100%; height:300px;"></div>
+                <div class="x_content">
+                  <div class="dashboard-widget-content">
+                    <div >
+                      <span class="image"><img src="images/traffic.jpg" alt="Profile Image" style="width: 100%; padding-left: 20px; padding-right: 20px;" /></span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
 
+            </div>
           </div>
-          <br />
 
-          <div class="row">
-            <div class="col-md-2 col-sm-4 col-xs-12">
-              <div class="x_panel tile">
-                <div class="x_content">
-                  <div class="dashboard-widget-content">
-                    <div >
-                      <h4>Caltrain Flock</h4>
-                      <canvas width="150" height="80" id="foo" class="" style="width: 160px; height: 100px;"></canvas>
-                      <div class="goal-wrapper">
-                        <span id="gauge-text" class="gauge-value pull-left">0</span>
-                        <span id="goal-text" class="goal-value pull-right">1,200</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-2 col-sm-4 col-xs-12">
-              <div class="x_panel tile">
-                <div class="x_content">
-                  <div class="dashboard-widget-content">
-                    <div >
-                      <h4>Richmond Bart</h4>
-                      <canvas width="150" height="80" id="foo2" class="" style="width: 160px; height: 100px;"></canvas>
-                      <div class="goal-wrapper">
-                        <span id="gauge-text2" class="gauge-value pull-left">0</span>
-                        <span id="goal-text2" class="goal-value pull-right">5,000</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-2 col-sm-4 col-xs-12">
-              <div class="x_panel tile">
-                <div class="x_content">
-                  <div class="dashboard-widget-content">
-                    <div >
-                      <h4>Pittsburg Bart</h4>
-                      <canvas width="150" height="80" id="foo3" class="" style="width: 160px; height: 100px;"></canvas>
-                      <div class="goal-wrapper">
-                        <span id="gauge-text3" class="gauge-value pull-left">0</span>
-                        <span id="goal-text3" class="goal-value pull-right">2000</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-2 col-sm-4 col-xs-12">
-              <div class="x_panel tile">
-                <div class="x_content">
-                  <div class="dashboard-widget-content">
-                    <div >
-                      <h4>Pleasanton Bart</h4>
-                      <canvas width="150" height="80" id="foo4" class="" style="width: 160px; height: 100px;"></canvas>
-                      <div class="goal-wrapper">
-                        <span id="gauge-text4" class="gauge-value pull-left">0</span>
-                        <span id="goal-text4" class="goal-value pull-right">4,000</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-2 col-sm-4 col-xs-12">
-              <div class="x_panel tile">
-                <div class="x_content">
-                  <div class="dashboard-widget-content">
-                    <div >
-                      <h4>N Judah MUNI</h4>
-                      <canvas width="150" height="80" id="foo5" class="" style="width: 160px; height: 100px;"></canvas>
-                      <div class="goal-wrapper">
-                        <span id="gauge-text5" class="gauge-value pull-left">0</span>
-                        <span id="goal-text5" class="goal-value pull-right">1100</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-2 col-sm-4 col-xs-12">
-              <div class="x_panel tile">
-                <div class="x_content">
-                  <div class="dashboard-widget-content">
-                    <div >
-                      <h4>J Church MUNI</h4>
-                      <canvas width="150" height="80" id="foo6" class="" style="width: 160px; height: 100px;"></canvas>
-                      <div class="goal-wrapper">
-                        <span id="gauge-text6" class="gauge-value pull-left">0</span>
-                        <span id="goal-text6" class="goal-value pull-right">900</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
         </div>
         <!-- /page content -->
 
@@ -370,58 +382,71 @@
     <script src="/static/morris.min.js"></script>
 
     <!-- Custom Theme Scripts -->
-    <script src="../build/js/custom.min.js"></script>
+    <script src="static/custom.min.js"></script>
+
 
     <!-- Flot -->
     <script>
       $(document).ready(function() {
-        Morris.Area({
-          element: 'graph_area',
-          data: [
-            {hour: '5:00 AM', completed: 2666, in_progress: null, notified: 2647},
-            {hour: '6:00 AM', completed: 2778, in_progress: 2294, notified: 2441},
-            {hour: '7:00 AM', completed: 4912, in_progress: 1969, notified: 2501},
-            {hour: '8:00 AM', completed: 3767, in_progress: 3597, notified: 5689},
-            {hour: '9:00 AM', completed: 6810, in_progress: 1914, notified: 2293},
-            {hour: '10:00 AM', completed: 5670, in_progress: 4293, notified: 1881},
-            {hour: '11:00 AM', completed: 4820, in_progress: 3795, notified: 1588},
-            {hour: '12:00 PM', completed: 15073, in_progress: 5967, notified: 5175},
-            {hour: '1:00 PM', completed: 10687, in_progress: 4460, notified: 2028},
-            {hour: '2:00 PM', completed: 8432, in_progress: 5713, notified: 1791},
-            {hour: '3:00 PM', completed: 8432, in_progress: 5713, notified: 1791},
-            {hour: '4:00 PM', completed: 8432, in_progress: 5713, notified: 1791},
-            {hour: '5:00 PM', completed: 8432, in_progress: 5713, notified: 1791},
-            {hour: '6:00 PM', completed: 8432, in_progress: 5713, notified: 1791},
-            {hour: '7:00 PM', completed: 8432, in_progress: 5713, notified: 1791}
-          ],
-          xkey: 'hour',
-          ykeys: ['completed', 'in_progress', 'notified'],
-          lineColors: ['#26B99A', '#34495E', '#ACADAC', '#3498DB'],
-          labels: ['Completed', 'In Progress', 'Notified'],
-          pointSize: 2,
-          hideHover: 'auto',
-          resize: true
-        });
+        // Morris.Area({
+        //   element: 'graph_area',
+        //   data: [
+        //     {hour: '5:00 AM', completed: 2666, in_progress: null, notified: 2647},
+        //     {hour: '6:00 AM', completed: 2778, in_progress: 2294, notified: 2441},
+        //     {hour: '7:00 AM', completed: 4912, in_progress: 1969, notified: 2501},
+        //     {hour: '8:00 AM', completed: 3767, in_progress: 3597, notified: 5689},
+        //     {hour: '9:00 AM', completed: 6810, in_progress: 1914, notified: 2293},
+        //     {hour: '10:00 AM', completed: 5670, in_progress: 4293, notified: 1881},
+        //     {hour: '11:00 AM', completed: 4820, in_progress: 3795, notified: 1588},
+        //     {hour: '12:00 PM', completed: 15073, in_progress: 5967, notified: 5175},
+        //     {hour: '1:00 PM', completed: 10687, in_progress: 4460, notified: 2028},
+        //     {hour: '2:00 PM', completed: 8432, in_progress: 5713, notified: 1791},
+        //     {hour: '3:00 PM', completed: 8432, in_progress: 5713, notified: 1791},
+        //     {hour: '4:00 PM', completed: 8432, in_progress: 5713, notified: 1791},
+        //     {hour: '5:00 PM', completed: 8432, in_progress: 5713, notified: 1791},
+        //     {hour: '6:00 PM', completed: 8432, in_progress: 5713, notified: 1791},
+        //     {hour: '7:00 PM', completed: 8432, in_progress: 5713, notified: 1791}
+        //   ],
+        //   xkey: 'hour',
+        //   ykeys: ['completed', 'in_progress', 'notified'],
+        //   lineColors: ['#26B99A', '#34495E', '#ACADAC', '#3498DB'],
+        //   labels: ['Completed', 'In Progress', 'Notified'],
+        //   pointSize: 2,
+        //   hideHover: 'auto',
+        //   resize: true
+        // });
 
 
         var data1 = [
-          [1, 17],
-          [2, 74],
-          [3, 6],
-          [4, 39],
-          [5, 20],
-          [6, 85],
-          [7, 7]
+          [6, 31],
+          [7, 45],
+          [8, 68],
+          [9, 55],
+          [10, 39],
+          [11, 20],
+          [12, 21],
+          [13, 22],
+          [14, 23],
+          [15, 35],
+          [16, 47],
+          [17, 57],
+          [18, 37]
         ];
 
         var data2 = [
-          [1, 170],
-          [2, 740],
-          [3, 60],
-          [4, 390],
-          [5, 200],
-          [6, 850],
-          [7, 70]
+          [6, 31],
+          [7, 45],
+          [8, 38],
+          [9, 45],
+          [10, 39],
+          [11, 20],
+          [12, 21],
+          [13, 22],
+          [14, 23],
+          [15, 35],
+          [16, 47],
+          [17, 37],
+          [18, 29]
         ];
         $("#canvas_dahs").length && $.plot($("#canvas_dahs"), [
           data1, data2
@@ -435,7 +460,7 @@
               show: true,
               tension: 0,
               lineWidth: 1,
-              fill: 0.4
+              fill: 0.8
             },
             points: {
               radius: 0,
@@ -451,11 +476,11 @@
             borderWidth: 1,
             color: '#fff'
           },
-          colors: ["rgba(38, 185, 154, 0.38)", "rgba(3, 88, 106, 0.38)"],
+          colors: ["rgba(255, 179, 179, 0.30)", "rgba(0, 88, 106, 1.0)"],
           xaxis: {
             tickColor: "rgba(51, 51, 51, 0.06)",
 
-            ticks: 7,
+            ticks: 13,
             tickFormatter: "d",
 
           },

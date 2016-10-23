@@ -120,4 +120,5 @@ button {
   color: #FFF;
   width: 100%;
   min-height: 40px;
+  visibility: hidden;
 }

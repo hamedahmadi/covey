@@ -228,6 +228,11 @@
         fill.style.transform = `translate3d(-${100-nextProgress}%, 0, 0)`;
       }
 
-      window.setInterval(updateProgress, 2000);
+      window.setInterval(function () {
+        var shouldUpdate = (~~(Math.random() * 100) % 2) === 0;
+        if(shouldUpdate){
+          updateProgress()
+        }
+      }, 1000);
     </script>
 </html>

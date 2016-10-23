@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,7 +12,18 @@
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.css' rel='stylesheet' />
 
-    <title>Flock Dashboard </title>
+    <script
+       src="https://code.jquery.com/jquery-3.1.1.min.js"
+       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+       crossorigin="anonymous"></script>
+
+    <script>
+      function pushNotification() {
+      $.get('/send_push_notification');
+      }
+    </script>
+
+    <title>Admin Dashboard</title>
 
     <!-- Bootstrap -->
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
@@ -29,6 +42,8 @@
 
     <!-- Custom Theme Style -->
     <link href="/static/css/custom.min.css" rel="stylesheet">
+
+    <link rel="manifest" href="{% static 'manifest.json' %}">
   </head>
 
   <body class="nav-md">
@@ -43,7 +58,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">John Doe
+                    <img src="images/rob.png" alt="">John Doe
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -119,6 +134,12 @@
                     </li>
                   </ul>
                 </li>
+                <li>
+                  <button class="btn btn-default" onClick="pushNotification();" style="margin-top: 11px; font-size: 16px; width: 120px;">
+                    Trigger Flock
+                  </button>
+                </li>
+
               </ul>
             </nav>
           </div>

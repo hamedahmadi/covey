@@ -15,14 +15,14 @@ def admin(request):
 
 
 def user(request):
-    _type = request.GET.get('type', None)
-    if _type == 'new':
-        return TemplateResponse(request, 'new-user.html')
+    return TemplateResponse(request, 'new-user.html')
+
+def flock(request):
     return TemplateResponse(request, 'current-user.html')
 
 
 def send_push_notification(request):
-    title = "Take the Caltrain today and receive 100 points!"
+    title = "Take the Caltrain today and ride for free!"
     body = ""
     headers = {
         'Authorization': 'key=AIzaSyAxJyzPAclQsMyoNos6DJT4Zh-gLEty_Go',

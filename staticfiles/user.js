@@ -26,5 +26,5 @@ messaging.requestPermission()
 
 messaging.onMessage(function(payload) {
   console.log("Message received. ", payload);
-  document.getElementById('push-notification').textContent = payload.notification.title;
+  $("#push-notification").text(payload.notification.title).css('visibility', 'visible');
 });

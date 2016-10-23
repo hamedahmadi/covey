@@ -15,9 +15,9 @@ def admin(request):
 
 
 def user(request):
-    _type = request.GET.get('type', None)
-    if _type == 'new':
-        return TemplateResponse(request, 'new-user.html')
+    return TemplateResponse(request, 'new-user.html')
+
+def flock(request):
     return TemplateResponse(request, 'current-user.html')
 
 

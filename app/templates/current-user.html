@@ -13,23 +13,26 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-      <div id="push-notification" style="position: absolute; padding: 10px; background-color: #333; color: #FFF; width: 100%; min-height: 40px;"></div>
+      <!-- <div id="push-notification" style="position: absolute; padding: 10px; background-color: #333; color: #FFF; width: 100%; min-height: 40px;"></div> -->
+      <div id="push-notification" class="push-notification hidden">
+        The flock is complete. Check your rewards!
+      </div>
       <div class="card affirmation">
         <div class="card-icon">
-          <div class="ion-android-checkmark-circle"></div>
+          <div id="affirmation-icon" class="ion-android-checkmark-circle"></div>
         </div>
-        <div class="card-content">
+        <div id="affirmation-text" class="card-content">
           You've joined a flock!
         </div>
       </div>
       <div class="card flock">
         <div class="progressbar">
-          <div id="fill" class="progressbar-fill" style="transform: translate3d(-72%, 0, 0);"></div>
+          <div id="fill" class="progressbar-fill" style="transform: translate3d(-40%, 0, 0);"></div>
         </div>
         <div class="card-content">
           <div class="cell">
             <div id="progress" class="value">
-              28%
+              60%
             </div>
             <div class="unit">
               Progress
@@ -37,7 +40,7 @@
           </div>
           <div class="cell">
             <div id="participants" class="value">
-              70
+              150
             </div>
             <div class="unit">
               Participants
@@ -65,7 +68,7 @@
               10
             </div>
             <div class="unit">
-              Tons CO2 Saved
+              Tons of CO2 Saved
             </div>
           </div>
           <div class="cell">
@@ -85,6 +88,20 @@
 
     </body>
     <script type="application/javascript">
+      var notification = true;
+
+      var showNotification = function(show){
+        var notification = document.getElementById('push-notification');
+        if(show){
+          notification.classList.remove('hidden');
+          window.setTimeout(showNotification, 5000, false);
+        }
+        else{
+          document.getElementById('affirmation-text').innerText = 'You earned a free BART ride!';
+          notification.classList.add('hidden');
+        }
+      }
+
       var updateProgress = function(){
         var participants = document.getElementById('participants');
         var progress = document.getElementById('progress');
@@ -94,12 +111,17 @@
           return;
         }
 
-        var nextParticipants = ~~(participants.innerText) + 10;
+        var nextParticipants = ~~(participants.innerText) + 25;
         var nextProgress =~~((nextParticipants/250)*100);
 
         participants.innerText = nextParticipants;
         progress.innerText = `${nextProgress}%`;
         fill.style.transform = `translate3d(-${100-nextProgress}%, 0, 0)`;
+
+        if(notification && ((~~participants.innerText) === 250)){
+          showNotification(true);
+          notification = false;
+        }
       }
 
       window.setInterval(function () {

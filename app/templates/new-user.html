@@ -42,9 +42,15 @@ messaging.requestPermission()
 
       var showNotification = function(text){
 var notification = document.getElementById('push-notification');
+
+if (text) {
 notification.textContent = text;
 notification.classList.remove('hidden');
 window.setTimeout(showNotification, 5000, false);
+} else {
+notification.classList.add('hidden');
+}
+
       }
 
 

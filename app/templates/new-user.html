@@ -3,7 +3,6 @@
     <head>
        <script src="https://www.gstatic.com/firebasejs/3.5.1/firebase-app.js"></script>
         <script src="/firebase-messaging.js"></script>
-        <script src="/user.js" type="text/javascript"></script>
         <script
            src="https://code.jquery.com/jquery-3.1.1.min.js"
            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -13,6 +12,38 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
         <link rel="manifest" href="/manifest.json">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyC4kx_wrJwyfeQPB1FfQDSy7d7RD0IkhUI",
+  messagingSenderId: "190598361806"
+};
+firebase.initializeApp(config);
+
+const messaging = firebase.messaging();
+
+messaging.requestPermission()
+  .then(function() {
+    console.log('Notification permission granted.');
+
+    messaging.getToken()
+      .then(function(currentToken) {
+        console.log(currentToken);
+        //document.getElementById('push-notification').textContent = currentToken;
+      })
+      .catch(function(err) {
+        console.log('An error occurred while retrieving token. ', err);
+      });
+  })
+  .catch(function(err) {
+    console.log('Unable to get permission to notify. ', err);
+  });
+
+messaging.onMessage(function(payload) {
+  console.log("Message received. ", payload);
+  $("#push-notification").text(payload.notification.title).css('visibility', 'visible');
+});
+        </script>
     </head>
     <body>
       <div id="push-notification"></div>

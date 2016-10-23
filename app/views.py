@@ -35,6 +35,8 @@ def send_push_notification(request):
             "body": body,
         },
     }
+    response = requests.post('https://fcm.googleapis.com/fcm/send',
+                             headers=headers, data=json.dumps(data))
     data = {
         "to": "fz1THLwTEi0:APA91bGXWNhIplwYPhQf1ImrmUwNZfRI7cyuNN--OZQpMNe41StRqxWJxpxmu9SFGWbDvtPVPsDNSNkm4n5pstQWEz76GQ2gs7vjJCtY-X7Ra_X-5cNPEZRZ4azjfnD0AzK2XZb3Ud72",
         "notification" : {
@@ -42,6 +44,8 @@ def send_push_notification(request):
             "body": body,
         },
     }
+    response = requests.post('https://fcm.googleapis.com/fcm/send',
+                             headers=headers, data=json.dumps(data))
     data = {
         "to": "dPWkrJYqeoM:APA91bEnonj3E0Og_0Yl15BcJm96MTAGFkSrGY0-EMlluHwFhnU2kUmFm698w_TdTQiOPesJ1rFwr3QjINPwqwFe24l33D-yZH-ZhTBjkigXdQoilMECodFBpKlIupSDRcug3qqdkRz4",
         "notification" : {

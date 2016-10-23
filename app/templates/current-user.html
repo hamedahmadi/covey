@@ -1,20 +1,17 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html>
     <head>
       <script src="https://www.gstatic.com/firebasejs/3.5.1/firebase-app.js"></script>
-      <script src="{% static 'firebase-messaging.js' %}"></script>
-      <script src="{% static 'user.js' %}" type="text/javascript"></script>
-      <link href="/static/css/user.css" rel="stylesheet">
+      <script src="/firebase-messaging.js"></script>
+      <link href="/css/user.css" rel="stylesheet">
       <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
-      <link rel="manifest" href="{% static 'manifest.json' %}">
+      <link rel="manifest" href="/manifest.json">
       <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
       <div id="push-notification" class="push-notification hidden">
-        The flock is complete. Check your rewards!
+        The flock is complete. Thanks for joining!
       </div>
       <div class="card affirmation">
         <div class="card-icon">
@@ -59,20 +56,20 @@
       <h2>Achievements</h2>
 
       <div class="card achievements">
-        <div class="card-image" style="background-image: url('/static/images/snowtrees.jpg')">
+        <div class="card-image" style="background-image: url('/images/snowtrees.jpg')">
         </div>
         <div class="card-content">
           <div class="cell">
             <div class="value">
-              10
+              17
             </div>
             <div class="unit">
-              Tons of CO2 Saved
+              Lbs of CO2 Saved
             </div>
           </div>
           <div class="cell">
             <div class="value">
-              $40
+              $7
             </div>
             <div class="unit">
               Cash Saved
@@ -96,7 +93,7 @@
           window.setTimeout(showNotification, 5000, false);
         }
         else{
-          document.getElementById('affirmation-text').innerText = 'You earned a free BART ride!';
+          document.getElementById('affirmation-text').innerText = 'You earned a free Caltrain ride!';
           notification.classList.add('hidden');
         }
       }
@@ -110,7 +107,7 @@
           return;
         }
 
-        var nextParticipants = ~~(participants.innerText) + 25;
+        var nextParticipants = ~~(participants.innerText) + 50;
         var nextProgress =~~((nextParticipants/250)*100);
 
         participants.innerText = nextParticipants;

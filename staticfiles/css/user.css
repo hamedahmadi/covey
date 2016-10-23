@@ -189,7 +189,7 @@ button,
   display: inline-block;
   width: 20px;
   height: 13px;
-  background-image: url('/static/images/visa.jpg');
+  background-image: url('/images/visa.jpg');
   background-size: cover;
 }
 

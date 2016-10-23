@@ -150,6 +150,11 @@ button,
   display: inline-block;
 }
 
+.earnings-text.tiny {
+  display: inline-block;
+  font-size: 10px;
+}
+
 .profile img {
   width: 70%;
   border-radius: 50%;
